@@ -37,7 +37,7 @@ export default async function Page() {
         {hasSub ? (
           <div>
             <p className="text-2xl font-medium">
-              {session?.user?.name}'s dashboard
+              {session?.user?.name}&apos;s dashboard
             </p>
             <Link href="/api/auth/signout">Sign Out</Link>
           </div>
