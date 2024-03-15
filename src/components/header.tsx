@@ -1,8 +1,14 @@
 import Link from "next/link";
 
 interface User {
-  name: string;
-  email: string;
+  id: string;
+  name: string | null;
+  email: string | null;
+  emailVerified: Date | null;
+  image: string | null;
+  stripe_customer_id: string | null;
+  stripe_subscription_item: string | null;
+  api_key: string | null;
 }
 
 interface HeaderProps {

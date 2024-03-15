@@ -32,7 +32,7 @@ export default async function Page() {
 
   return (
     <div className="max-w-5xl m-auto w-full">
-      <Header />
+      <Header user={user} />
       <div className="flex flex-col">
         {hasSub ? (
           <div>
