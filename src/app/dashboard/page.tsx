@@ -17,18 +17,21 @@ export default async function Page() {
   const session = await getServerSession(authOptions);
 
   await createCustomerIfNull();
+  let user = null;
 
   // pull in the user from the database based on the current user's email
-  const user = await prisma.user.findFirst({
-    where: { email: session?.user?.email },
-  });
+  if (session?.user?.email) {
+    user = await prisma.user.findFirst({
+      where: { email: session.user.email },
+    });
+  }
 
-  const manage_link = await generateCustomerPortalLink(
-    "" + user?.stripe_customer_id
-  );
+  const manage_link =
+    user && (await generateCustomerPortalLink("" + user?.stripe_customer_id));
 
-  const hasSub = await hasSubscription();
-  const checkout_link = await createCheckoutLink("" + user?.stripe_customer_id);
+  const hasSub = user && (await hasSubscription());
+  const checkout_link =
+    user && (await createCheckoutLink("" + user?.stripe_customer_id));
 
   return (
     <div className="max-w-5xl m-auto w-full">

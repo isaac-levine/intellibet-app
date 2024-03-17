@@ -9,9 +9,14 @@ const prisma = new PrismaClient();
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
-  const user = await prisma.user.findFirst({
-    where: { email: session?.user?.email },
-  });
+  let user = null;
+
+  if (session?.user?.email) {
+    user = await prisma.user.findFirst({
+      where: { email: session.user.email },
+    });
+  }
+
   return (
     <main>
       <Header user={user} />
