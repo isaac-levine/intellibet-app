@@ -11,7 +11,8 @@ export default async function Page() {
         <button
           onClick={() =>
             signIn("discord", {
-              callbackUrl: process.env.NEXTAUTH_URL + "/dashboard",
+              callbackUrl:
+                process.env.NEXTAUTH_URL + "/api/auth/callback/discord",
             })
           }
           className="px-4 py-2 bg-violet-500 text-white font-medium rounded-lg "
