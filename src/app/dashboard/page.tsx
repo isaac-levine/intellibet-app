@@ -42,31 +42,31 @@ export default async function Page() {
             <p className="text-2xl font-medium">
               {session?.user?.name}&apos;s dashboard
             </p>
-            <Link href="/api/auth/signout">Sign Out</Link>
+            <div className="">
+              {hasSub ? (
+                <div className="p-6 rounded-md border-emerald-400 border shadow-sm font-medium">
+                  Subscribed
+                </div>
+              ) : (
+                user && (
+                  <div className="p-6 rounded-md border-rose-400 border shadow-sm font-medium flex items-center gap-2">
+                    Haha! Broke ass bitch!
+                    <Link
+                      className="bg-black ml-auto text-white rounded-md px-2 py-1"
+                      href={"" + checkout_link}
+                    >
+                      Upgrade
+                    </Link>
+                  </div>
+                )
+              )}
+            </div>
           </div>
         ) : (
           <div className="flex items-center justify-center h-full mb-3">
             <p className="text-2xl font-medium">Sign in to view dashboard</p>
           </div>
         )}
-
-        <div className="">
-          {hasSub ? (
-            <div className="p-6 rounded-md border-emerald-400 border shadow-sm font-medium">
-              Subscribed
-            </div>
-          ) : (
-            <div className="p-6 rounded-md border-rose-400 border shadow-sm font-medium flex items-center gap-2">
-              Haha! Broke ass bitch!
-              <Link
-                className="bg-black ml-auto text-white rounded-md px-2 py-1"
-                href={"" + checkout_link}
-              >
-                Upgrade
-              </Link>
-            </div>
-          )}
-        </div>
       </div>
     </div>
   );
