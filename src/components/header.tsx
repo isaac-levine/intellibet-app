@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ModeToggle } from "./ui/dark-mode-toggle";
 
 interface User {
   id: string;
@@ -28,17 +29,18 @@ export function Header({ user }: HeaderProps) {
         <div className="flex items-center gap-4">
           <Link href="/#pricing">Pricing</Link>
           <Link href="/dashboard">Dashboard</Link>
+          <ModeToggle />
           {user ? (
             <Link
               href="api/auth/signout"
-              className="font-medium text-sm text-white bg-black px-4 py-2 rounded-lg hover:opacity-90"
+              className="whitespace-nowrap font-medium text-sm text-white bg-black px-4 py-2 rounded-lg hover:opacity-90"
             >
               Sign out
             </Link>
           ) : (
             <Link
               href="/signin"
-              className="font-medium text-sm text-white bg-black px-4 py-2 rounded-lg hover:opacity-90"
+              className="whitespace-nowrap font-medium text-sm text-white bg-black px-4 py-2 rounded-lg hover:opacity-90"
             >
               Sign in
             </Link>
