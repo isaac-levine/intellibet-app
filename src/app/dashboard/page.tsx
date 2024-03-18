@@ -85,7 +85,7 @@ export default async function Page() {
                   </ul>
                 </div>
                 <div className="w-3/4 rounded-md border-gray-400 border shadow-sm ml-1 h-screen">
-                  <h2 className="text-center">Sentiment Analysis</h2>
+                  <h2 className="text-center font-bold">Sentiment Analysis</h2>
                 </div>
               </div>
             ) : (
