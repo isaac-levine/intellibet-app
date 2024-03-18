@@ -42,37 +42,25 @@ export default async function Page() {
             <p className="text-2xl font-medium">
               {session?.user?.name}&apos;s dashboard
             </p>
-
-            {hasSub ? (
-              <div className="p-6 rounded-md border-emerald-400 border shadow-sm font-medium">
-                <div className="w-1/4 bg-gray-200">
-                  <ul className="py-4">
-                    <li className="px-4 py-2">Item 1</li>
-                    <li className="px-4 py-2">Item 2</li>
-                    <li className="px-4 py-2">Item 3</li>
-                  </ul>
+            <div className="">
+              {hasSub ? (
+                <div className="p-6 rounded-md border-emerald-400 border shadow-sm font-medium">
+                  Subscribed
                 </div>
-                <div className="w-3/4 bg-gray-200">
-                  <ul className="py-4">
-                    <li className="px-4 py-2">Item 1</li>
-                    <li className="px-4 py-2">Item 2</li>
-                    <li className="px-4 py-2">Item 3</li>
-                  </ul>
-                </div>
-              </div>
-            ) : (
-              user && (
-                <div className="p-6 rounded-md border-rose-400 border shadow-sm font-medium flex items-center gap-2">
-                  Haha! Broke ass bitch!
-                  <Link
-                    className="bg-black ml-auto text-white rounded-md px-2 py-1"
-                    href={"" + checkout_link}
-                  >
-                    Upgrade
-                  </Link>
-                </div>
-              )
-            )}
+              ) : (
+                user && (
+                  <div className="p-6 rounded-md border-rose-400 border shadow-sm font-medium flex items-center gap-2">
+                    Haha! Broke ass bitch!
+                    <Link
+                      className="bg-black ml-auto text-white rounded-md px-2 py-1"
+                      href={"" + checkout_link}
+                    >
+                      Upgrade
+                    </Link>
+                  </div>
+                )
+              )}
+            </div>
           </div>
         ) : (
           <div className="flex items-center justify-center h-full mb-3">

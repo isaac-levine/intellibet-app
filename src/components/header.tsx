@@ -18,7 +18,7 @@ interface HeaderProps {
 
 export function Header({ user }: HeaderProps) {
   return (
-    <nav className="max-w-5xl m-auto w-full px-4 sticky top-0">
+    <nav className="max-w-5xl m-auto w-full px-4 sticky top-0 bg-inherit backdrop-filter backdrop-blur-lg rounded-full border drop-shadow-lg mb-4">
       <div className="flex items-center gap-8 justify-between py-4">
         <Link
           href={"/"}
