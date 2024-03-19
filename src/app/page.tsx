@@ -52,7 +52,7 @@ export default async function Home() {
             size: "lg",
             className: "mt-5",
           })}
-          href="/dashboard"
+          href="/signin"
         >
           Get Started <ArrowRight className="ml-2 h-5 w-5" />
         </Link>
