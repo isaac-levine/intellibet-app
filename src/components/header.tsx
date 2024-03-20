@@ -66,13 +66,13 @@ export function Header({ user }: HeaderProps) {
                   >
                     Pricing
                   </Link> */}
-                  <Link
+                  {/* <Link
                     href="https://p22yo9knlg6.typeform.com/to/XVpPvsyi"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     role="menuitem"
                   >
                     Join Beta
-                  </Link>
+                  </Link> */}
                   <Link
                     href="/dashboard"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -80,7 +80,7 @@ export function Header({ user }: HeaderProps) {
                   >
                     Dashboard
                   </Link>
-                  {user ? (
+                  {/* {user ? (
                     <Link
                       href="api/auth/signout"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -94,7 +94,13 @@ export function Header({ user }: HeaderProps) {
                     >
                       Sign in
                     </Link>
-                  )}
+                  )} */}
+                  <Link
+                    href="https://p22yo9knlg6.typeform.com/to/XVpPvsyi"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Join Beta
+                  </Link>
                 </div>
               </div>
             </Transition>
@@ -107,20 +113,14 @@ export function Header({ user }: HeaderProps) {
             >
               Pricing
             </Link> */}
-            <Link
-              href="https://p22yo9knlg6.typeform.com/to/XVpPvsyi"
-              className="text-md text-black hover:opacity-90"
-              role="menuitem"
-            >
-              Join Beta
-            </Link>
+
             <Link
               href="/dashboard"
               className="text-md text-black hover:opacity-90"
             >
               Dashboard
             </Link>
-            {user ? (
+            {/* {user ? (
               <Link
                 href="api/auth/signout"
                 className="whitespace-nowrap font-medium text-sm text-white bg-black px-4 py-2 rounded-lg hover:opacity-90"
@@ -134,7 +134,14 @@ export function Header({ user }: HeaderProps) {
               >
                 Sign in
               </Link>
-            )}
+            )} */}
+            <Link
+              href="https://p22yo9knlg6.typeform.com/to/XVpPvsyi"
+              className="whitespace-nowrap font-medium text-sm text-white bg-black px-4 py-2 rounded-lg hover:opacity-90"
+              role="menuitem"
+            >
+              Join Beta
+            </Link>
           </div>
         </div>
       </MaxWidthWrapper>
