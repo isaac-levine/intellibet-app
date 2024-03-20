@@ -26,7 +26,7 @@ export default async function Home() {
     <>
       <Header user={user} />
       <MaxWidthWrapper className="mb-12 mt-28 flex flex-col items-center justify-center sm:mt-20">
-        <div className="mx-auto my-4 mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-gray-200 bg-white px-7 py-2 shadow-mdhover:border-gray-300 hover:bg-white/50">
+        <div className="mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-gray-200 bg-white px-7 py-2 shadow-mdhover:border-gray-300 hover:bg-white/50">
           <p className="text-md justify-center justify-center font-semibold text-gray-700">
             intellibet.io is currently in Private Beta.
           </p>

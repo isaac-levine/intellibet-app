@@ -44,9 +44,9 @@ export default async function Page() {
   ];
 
   return (
-    <div className="max-w-7xl m-auto w-full">
+    <>
       <Header user={user} />
-      <div className="flex flex-col">
+      <div className="flex flex-col max-w-7xl m-auto w-full my-4">
         {user ? (
           <div>
             <p className="text-xl font-medium text-center">
@@ -85,7 +85,7 @@ export default async function Page() {
                   </ul>
                 </div>
                 <div className="w-3/4 rounded-md border-gray-400 border shadow-sm ml-1 h-screen">
-                  <h2 className="text-center font-bold">Sentiment Analysis</h2>
+                  <h2 className="text-center">Sentiment Analysis</h2>
                 </div>
               </div>
             ) : (
@@ -108,6 +108,6 @@ export default async function Page() {
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 }
