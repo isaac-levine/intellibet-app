@@ -52,7 +52,7 @@ export default async function Home() {
             size: "lg",
             className: "mt-5",
           })}
-          href="/signin"
+          href="https://p22yo9knlg6.typeform.com/to/XVpPvsyi"
         >
           Get Started <ArrowRight className="ml-2 h-5 w-5" />
         </Link>
