@@ -46,7 +46,7 @@ export default async function Page() {
   return (
     <>
       <Header user={user} />
-      <div className="flex flex-col max-w-7xl m-auto w-full my-4">
+      <div className="flex flex-col max-w-7xl m-auto w-full">
         {user ? (
           <div>
             <p className="text-xl font-medium text-center">
@@ -54,8 +54,8 @@ export default async function Page() {
             </p>
 
             {hasSub ? (
-              <div className="p-5 flex">
-                <div className="w-1/4 rounded-md border-gray-400 border shadow-sm mr-1 h-screen">
+              <div className="p-5 flex flex-col items-center">
+                <div className="w-1/4 rounded-md border-gray-400 border shadow-sm mb-4">
                   <h1 className="text-center font-bold">Watchlist</h1>
                   <ul className="py-4">
                     {watchlistItems.map((item, index) => (
@@ -84,7 +84,7 @@ export default async function Page() {
                     ))}
                   </ul>
                 </div>
-                <div className="w-3/4 rounded-md border-gray-400 border shadow-sm ml-1 h-screen">
+                <div className="w-3/4 rounded-md border-gray-400 border shadow-sm">
                   <h2 className="text-center">Sentiment Analysis</h2>
                 </div>
               </div>
@@ -104,7 +104,9 @@ export default async function Page() {
           </div>
         ) : (
           <div className="flex items-center justify-center h-full mb-3">
-            <p className="text-2xl font-medium">Sign in to view dashboard</p>
+            <p className="mx-4 text-2xl font-medium mt-4 flex items-center justify-center">
+              Sorry, the dashboard is currently only available to Beta users.
+            </p>
           </div>
         )}
       </div>
