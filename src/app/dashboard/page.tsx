@@ -100,7 +100,7 @@ export default async function Page() {
                 <div className="mx-auto mb-32 mt-32 max-w-5xl sm:mt-56 px-6 lg:px-8 sm:text-center">
                   <h2 className="mt-2 text-4xl font-bold text-navy sm:text-5xl">
                     Sorry {user.name}, only pro users can see the dashboard.
-                    Apply to join the private beta below.
+                    Apply to join the private beta.
                   </h2>
 
                   <Link
