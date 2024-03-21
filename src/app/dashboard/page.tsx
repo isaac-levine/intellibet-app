@@ -12,6 +12,8 @@ import Link from "next/link";
 const prisma = new PrismaClient();
 
 import { Header } from "@/components/header";
+import ChartOne from "@/components/charts/ChartOne";
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 
 export default async function Page() {
   const session = await getServerSession(authOptions);
@@ -46,17 +48,16 @@ export default async function Page() {
   return (
     <>
       <Header user={user} />
-      <div className="flex flex-col max-w-7xl m-auto w-full">
+      <MaxWidthWrapper>
         {user ? (
           <div>
-            <p className="text-xl font-medium text-center">
+            <p className="text-xl font-medium text-center mt-2">
               {session?.user?.name}&apos;s dashboard
             </p>
-
             {hasSub ? (
-              <div className="p-5 flex flex-col items-center">
-                <div className="w-1/4 rounded-md border-gray-400 border shadow-sm mb-4">
-                  <h1 className="text-center font-bold">Watchlist</h1>
+              <div className="flex mt-4">
+                <div className="w-1/5 rounded-md border-gray-400 border shadow-sm mr-1 h-screen">
+                  <h1 className="text-center font-semibold">Watchlist</h1>
                   <ul className="py-4">
                     {watchlistItems.map((item, index) => (
                       <li
@@ -84,11 +85,15 @@ export default async function Page() {
                     ))}
                   </ul>
                 </div>
-                <div className="w-3/4 rounded-md border-gray-400 border shadow-sm">
-                  <h2 className="text-center">Sentiment Analysis</h2>
+                <div className="w-3/4 rounded-md border-gray-400 border shadow-sm ml-1 h-screen">
+                  <h2 className="text-center font-semibold">
+                    Sentiment Analysis
+                  </h2>
+                  <ChartOne />
                 </div>
               </div>
             ) : (
+              // if the user is not a pro user, show this message
               user && (
                 <div className="p-6 rounded-md border-rose-400 border shadow-sm font-medium flex items-center gap-2">
                   Sorry, only pro users can see the dashboard.
@@ -109,7 +114,7 @@ export default async function Page() {
             </p>
           </div>
         )}
-      </div>
+      </MaxWidthWrapper>
     </>
   );
 }
