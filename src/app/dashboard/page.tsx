@@ -14,6 +14,8 @@ const prisma = new PrismaClient();
 import { Header } from "@/components/header";
 import ChartOne from "@/components/charts/ChartOne";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import { buttonVariants } from "@/components/ui/button";
+import { LockIcon } from "lucide-react";
 
 export default async function Page() {
   const session = await getServerSession(authOptions);
@@ -95,13 +97,19 @@ export default async function Page() {
             ) : (
               // if the user is not a pro user, show this message
               user && (
-                <div className="p-6 rounded-md border-rose-400 border shadow-sm font-medium flex items-center gap-2">
-                  Sorry, only pro users can see the dashboard.
+                <div className="mx-auto mb-32 mt-32 max-w-5xl sm:mt-56 px-6 lg:px-8 sm:text-center">
+                  <h2 className="mt-2 text-4xl font-bold text-navy sm:text-5xl">
+                    Sorry {user.name}, only pro users can see the dashboard.
+                    Apply to join the private beta below.
+                  </h2>
+
                   <Link
-                    className="bg-black ml-auto text-white rounded-md px-2 py-1"
-                    href={"" + checkout_link}
+                    className={buttonVariants({
+                      className: "mt-5 text-white bg-navy",
+                    })}
+                    href="https://p22yo9knlg6.typeform.com/to/XVpPvsyi"
                   >
-                    Upgrade to Pro
+                    Join Beta <LockIcon className="ml-2 h-5 w-5" />
                   </Link>
                 </div>
               )
