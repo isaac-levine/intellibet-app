@@ -9,7 +9,7 @@ const prisma = new PrismaClient();
 import Link from "next/link";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { buttonVariants } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, LockIcon } from "lucide-react";
 import Image from "next/image";
 
 export default async function Home() {
@@ -32,7 +32,7 @@ export default async function Home() {
           </p>
         </div>
 
-        <h1 className="mb-4 max-w-5xl text-5xl font-bold md:text-6xl lg:text-7xl">
+        <h1 className="mb-4 max-w-5xl text-5xl font-bold md:text-6xl lg:text-7xl text-navy">
           Track sports betting sentiment in{" "}
           <span className="underline font-semibold text-transparent bg-clip-text bg-gradient-to-r from-lightgreen to-darkgreen">
             seconds
@@ -52,8 +52,7 @@ export default async function Home() {
 
         <Link
           className={buttonVariants({
-            size: "lg",
-            className: "mt-5",
+            className: "mt-5 text-white bg-navy",
           })}
           href="https://p22yo9knlg6.typeform.com/to/XVpPvsyi"
         >
@@ -76,7 +75,7 @@ export default async function Home() {
               />
             </div>
 
-            <div>
+            <div className="hidden">
               <div className="mx-auto max-w-6xl px-6 lg:px-8">
                 <div className="mt-16 flow-root sm:mt-24 ">
                   <div className="background-gray-900/5 -m-2 rounded-xl p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-3xl lg:p-4 ">
@@ -109,10 +108,10 @@ export default async function Home() {
         </div>
 
         {/* FEATURE SECTION */}
-        <div className="mx-auto mb-32 mt-32 max-w-5xl sm:mt-56">
+        <div className="mx-auto mt-32 max-w-5xl sm:mt-56">
           <div className="mb-12 px-6 lg:px-8">
             <div className="mx-auto max-w-2xl sm:text-center">
-              <h2 className="mt-2 text-4xl font-bold text-gray-900 sm:text-5xl">
+              <h2 className="mt-2 text-4xl font-bold text-navy sm:text-5xl">
                 Start tracking the sentiment of your sports betting picks in
                 realtime.
               </h2>
@@ -131,8 +130,10 @@ export default async function Home() {
                 <span className="text-sm font-medium text-green-700">
                   Step 1
                 </span>
-                <span className="text-xl font-semibold">Sign up.</span>
-                <span className="mt-2 text-zinc-700">
+                <span className="text-xl font-semibold text-navy">
+                  Sign up.
+                </span>
+                <span className="mt-2">
                   Start out with a free plan or choose our{" "}
                   <Link
                     href="/pricing"
@@ -150,7 +151,9 @@ export default async function Home() {
                 <span className="text-sm font-medium text-green-600">
                   Step 2
                 </span>
-                <span className="text-xl font-semibold">Add your games.</span>
+                <span className="text-xl font-semibold text-navy">
+                  Add your games.
+                </span>
                 <span className="mt-2 text-zinc-700">
                   Easily add whatever game you&apos;re watching or betting on to
                   your Watchlist through the member dashboard.
@@ -162,7 +165,9 @@ export default async function Home() {
                 <span className="text-sm font-medium text-green-600">
                   Step 3
                 </span>
-                <span className="text-xl font-semibold">Start tracking.</span>
+                <span className="text-xl font-semibold text-navy">
+                  Start tracking.
+                </span>
                 <span className="mt-2 text-zinc-700">
                   We&apos;ll automatically start tracking the sentiment of your
                   games, providing you with real-time updates, graphs, and
@@ -172,7 +177,8 @@ export default async function Home() {
             </li>
           </ol>
 
-          <div className="mx-auto max-w-6xl px-6 lg:px-8">
+          {/* HIDDEN IMAGE 2 */}
+          <div className="hidden mx-auto max-w-6xl px-6 lg:px-8">
             <div className="mt-16 flow-root sm:mt-24 ">
               <div className="background-gray-900/5 -m-2 rounded-xl p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-3xl lg:p-4 ">
                 <Image
@@ -186,6 +192,24 @@ export default async function Home() {
               </div>
             </div>
           </div>
+        </div>
+        <div className="mx-auto mb-32 mt-32 max-w-5xl sm:mt-56 px-6 lg:px-8 sm:text-center">
+          <h2 className="mt-2 text-4xl font-bold text-navy sm:text-5xl">
+            Apply to join the Private Beta below.
+          </h2>
+          <p className="text-large mt-4 text-gray-600">
+            We are currently accepting applications on a rolling basis. Apply to
+            join the private beta so you can use the Intellibet dashboard,
+            submit feature requests, and help us improve the product.
+          </p>
+          <Link
+            className={buttonVariants({
+              className: "mt-5 text-white bg-navy",
+            })}
+            href="https://p22yo9knlg6.typeform.com/to/XVpPvsyi"
+          >
+            Join Beta <LockIcon className="ml-2 h-5 w-5" />
+          </Link>
         </div>
       </MaxWidthWrapper>
     </>

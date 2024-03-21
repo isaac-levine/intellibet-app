@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { Inter as FontSans } from "next/font/google";
+import Head from "next/head";
 
 import { cn } from "../lib/utils";
 
@@ -27,6 +28,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="shortcut icon" href="favicon.ico" />
+      </Head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
