@@ -7,6 +7,8 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/20/solid";
 import { MenuIcon } from "lucide-react";
 import { Transition } from "@headlessui/react";
 import MaxWidthWrapper from "./MaxWidthWrapper";
+import Logo from "./icons/Logo";
+import { Button } from "./ui/button";
 
 interface User {
   id: string;
@@ -33,7 +35,7 @@ export function Header({ user }: HeaderProps) {
             href={"/"}
             className="text-2xl font-semibold text-black hover:opacity-90"
           >
-            intellibet.io
+            <Logo />
           </Link>
           <div className="relative lg:hidden">
             <button onClick={() => setIsOpen(!isOpen)}>
@@ -137,7 +139,7 @@ export function Header({ user }: HeaderProps) {
             )} */}
             <Link
               href="https://p22yo9knlg6.typeform.com/to/XVpPvsyi"
-              className="whitespace-nowrap font-medium text-sm text-white bg-black px-4 py-2 rounded-lg hover:opacity-90"
+              className="whitespace-nowrap font-medium text-sm text-white bg-navy px-4 py-2 rounded-lg hover:opacity-90"
               role="menuitem"
             >
               Join Beta

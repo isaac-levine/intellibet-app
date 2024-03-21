@@ -22,6 +22,11 @@ module.exports = {
         border: "#E5E7EB",
       },
       position: ["sticky"],
+      colors: {
+        lightgreen: "#81F16E",
+        darkgreen: "#099873",
+        navy: "#082A43",
+      },
     },
   },
   plugins: [],
