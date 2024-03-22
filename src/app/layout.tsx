@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "Intellibet",
   description: "AI Sentiment Analysis for Sports Betting",
   icons: {
-    icon: '/favicon.svg', // /public path
+    icon: '/icon.png',
   },
 };
 
