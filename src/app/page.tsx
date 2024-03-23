@@ -211,6 +211,12 @@ export default async function Home() {
             Join Beta <LockIcon className="ml-2 h-5 w-5" />
           </Link>
         </div>
+
+        <div className="mx-auto mb-32 mt-4 max-w-5xl px-6 lg:px-8 sm:text-center">
+          <h3 className="mt-2 text-large font-semibold text-navy sm:text-xl">
+            Questions? Email <b>help@intellibet.io</b>
+          </h3>
+        </div>
       </MaxWidthWrapper>
     </>
   );
