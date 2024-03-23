@@ -193,7 +193,7 @@ export default async function Home() {
             </div>
           </div>
         </div>
-        <div className="mx-auto mb-32 mt-32 max-w-5xl sm:mt-56 px-6 lg:px-8 sm:text-center">
+        <div className="mx-auto mb-32 mt-16 max-w-5xl sm:mt-56 px-6 lg:px-8 sm:text-center">
           <h2 className="mt-2 text-4xl font-bold text-navy sm:text-5xl">
             Apply to join the Private Beta.
           </h2>
