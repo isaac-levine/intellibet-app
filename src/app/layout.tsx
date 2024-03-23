@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "Intellibet",
   description: "AI Sentiment Analysis for Sports Betting",
   icons: {
-    icon: '/icon.png',
+    icon: "/icon.png",
   },
 };
 
@@ -32,7 +32,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <link rel="shortcut icon" href="favicon.ico" />
+        <title>Intellibet</title>
+        <meta
+          name="description"
+          content="AI Sentiment Analysis for Sports Betting"
+        />
+        <link rel="icon" href="/icon.png" />
       </Head>
       <body
         className={cn(
