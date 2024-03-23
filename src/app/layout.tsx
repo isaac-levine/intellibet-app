@@ -19,6 +19,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Intellibet",
   description: "AI Sentiment Analysis for Sports Betting",
+  icons: {
+    icon: '/icon.png',
+  },
 };
 
 export default function RootLayout({
