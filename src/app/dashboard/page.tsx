@@ -7,20 +7,19 @@ import {
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { getServerSession } from "next-auth";
 
-import { PrismaClient } from "@prisma/client";
 import Link from "next/link";
-const prisma = new PrismaClient();
+import { prisma } from "@/lib/prisma";
 
 import { Header } from "@/components/header";
-import ChartOne from "@/components/charts/ChartOne";
 import Watchlist from "./watchlist";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { buttonVariants } from "@/components/ui/button";
 import { LockIcon, Watch } from "lucide-react";
 
 import dynamic from "next/dynamic";
-
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
+const ChartOne = dynamic(() => import("@/components/charts/ChartOne"), {
+  ssr: false, // This will disable server-side rendering for ChartOne.
+});
 
 export default async function Page() {
   const session = await getServerSession(authOptions);

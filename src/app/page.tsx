@@ -3,8 +3,7 @@ import { Header } from "@/components/header";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { getServerSession } from "next-auth";
 
-import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
+import { prisma } from "@/lib/prisma";
 
 import Link from "next/link";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";

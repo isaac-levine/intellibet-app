@@ -2,9 +2,8 @@ import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { getServerSession } from "next-auth";
 import Stripe from "stripe";
 
-import { PrismaClient } from "@prisma/client";
 import { randomUUID } from "crypto";
-const prisma = new PrismaClient();
+import { prisma } from "@/lib/prisma";
 
 //price_1NarR3APMZcBliJSoefCKTi5
 
