@@ -75,7 +75,8 @@ export default async function Home() {
               />
             </div>
 
-            <div className="hidden">
+            {/* HIDDEN IMAGE 1  */}
+            {/* <div className="hidden">
               <div className="mx-auto max-w-6xl px-6 lg:px-8">
                 <div className="mt-16 flow-root sm:mt-24 ">
                   <div className="background-gray-900/5 -m-2 rounded-xl p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-3xl lg:p-4 ">
@@ -90,7 +91,7 @@ export default async function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div
               aria-hidden="true"
@@ -178,7 +179,7 @@ export default async function Home() {
           </ol>
 
           {/* HIDDEN IMAGE 2 */}
-          <div className="hidden mx-auto max-w-6xl px-6 lg:px-8">
+          {/* <div className="hidden mx-auto max-w-6xl px-6 lg:px-8">
             <div className="mt-16 flow-root sm:mt-24 ">
               <div className="background-gray-900/5 -m-2 rounded-xl p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-3xl lg:p-4 ">
                 <Image
@@ -191,7 +192,7 @@ export default async function Home() {
                 />
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="mx-auto mb-32 mt-16 max-w-5xl sm:mt-56 px-6 lg:px-8 sm:text-center">
           <h2 className="mt-2 text-4xl font-bold text-navy sm:text-5xl">
