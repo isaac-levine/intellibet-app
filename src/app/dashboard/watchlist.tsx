@@ -15,6 +15,9 @@ export default function Watchlist() {
   const [newGame, setNewGame] = useState("");
 
   const addGame = (event: React.FormEvent) => {
+    if (newGame.trim() === "") {
+      return; // Don't add empty strings
+    }
     event.preventDefault();
     setWatchlistItems([...watchlistItems, newGame]);
     setNewGame("");
