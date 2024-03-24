@@ -13,9 +13,14 @@ const prisma = new PrismaClient();
 
 import { Header } from "@/components/header";
 import ChartOne from "@/components/charts/ChartOne";
+import Watchlist from "./watchlist";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { buttonVariants } from "@/components/ui/button";
-import { LockIcon } from "lucide-react";
+import { LockIcon, Watch } from "lucide-react";
+
+import dynamic from "next/dynamic";
+
+const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 export default async function Page() {
   const session = await getServerSession(authOptions);
@@ -37,16 +42,6 @@ export default async function Page() {
   const checkout_link =
     user && (await createCheckoutLink("" + user?.stripe_customer_id));
 
-  const watchlistItems = [
-    "BOS vs. LAL",
-    "NY vs. GS",
-    "MIA vs. CHI",
-    "PHI vs. ATL",
-    "LAC vs. DAL",
-    "POR vs. UTA",
-    "MIL vs. BKN",
-  ];
-
   return (
     <>
       <Header user={user} />
@@ -58,35 +53,7 @@ export default async function Page() {
             </p>
             {hasSub ? (
               <div className="flex mt-4">
-                <div className="w-1/5 rounded-md border-gray-400 border shadow-sm mr-1 h-screen">
-                  <h1 className="text-center font-semibold">Watchlist</h1>
-                  <ul className="py-4">
-                    {watchlistItems.map((item, index) => (
-                      <li
-                        key={index}
-                        className="px-4 py-2 rounded border flex justify-between items-center"
-                      >
-                        {item}
-                        <button className="text-red-400 hover:text-red-800">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            className="h-6 w-6"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M6 18L18 6M6 6l12 12"
-                            />
-                          </svg>
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <Watchlist />
                 <div className="w-3/4 rounded-md border-gray-400 border shadow-sm ml-1 h-screen">
                   <h2 className="text-center font-semibold">
                     Sentiment Analysis
