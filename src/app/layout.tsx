@@ -33,11 +33,8 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         <title>Intellibet</title>
-        <meta
-          name="description"
-          content="AI Sentiment Analysis for Sports Betting"
-        />
         <link rel="icon" href="/icon.png" />
+        <desc>AI Sentiment Analysis for Sports Betting</desc>
       </Head>
       <body
         className={cn(
