@@ -1,31 +1,36 @@
 "use client";
 
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { useState, useEffect } from "react";
 
-export default function Test() {
-  const [message, setMessage] = useState("Loading...");
-  const [teams, setTeams] = useState([]);
+export default function NBAGamesDropdown() {
+  const [games, setGames] = useState<
+    { homeTeam: string; awayTeam: string; time: string }[]
+  >([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/home")
+    fetch(process.env.NEXT_PUBLIC_API_URL + "/games")
       .then((response) => response.json())
       .then((data) => {
-        setMessage(data.message);
-        setTeams(data.teams);
+        setGames(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
       });
   }, []);
 
   return (
-    <MaxWidthWrapper>
-      <h1>This is a test page for the python server</h1>
-      <p>{message}</p>
-      <br />
-      <ul>
-        {teams.map((team, index) => (
-          <li key={index}>{team}</li>
-        ))}
-      </ul>
-    </MaxWidthWrapper>
+    <select>
+      {loading ? (
+        <option>Loading...</option>
+      ) : (
+        games.map((game, index) => (
+          <option key={index}>
+            {game.homeTeam} vs {game.awayTeam} at {game.time}
+          </option>
+        ))
+      )}
+    </select>
   );
 }
