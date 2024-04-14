@@ -2,7 +2,6 @@ import { Header } from "@/components/header";
 
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { getServerSession } from "next-auth";
-
 import { prisma } from "@/lib/prisma";
 
 import Link from "next/link";
